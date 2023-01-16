@@ -3,6 +3,52 @@ import UIKit
 var greeting = "Hello, playground"
 greeting
 
+//10 Chapter - Inheritance
+class Parent{
+    var value : Int
+    
+    init(){
+        value = 0
+    }
+    
+    convenience init(a : Int){
+        self.init()
+    }
+    
+    func sayHello(){
+        print("hello")
+    }
+}
+
+class Child : Parent{
+    var value2 : Int
+    init(v: Int){
+        self.value2 = v
+        super.init()
+    }
+    
+    override init() {
+        value2 = 0
+        super.init()
+    }
+    
+    override func sayHello() {
+        print("Hello Swift")
+    }
+}
+
+let obj = Child(v: 10)
+obj.value
+obj.sayHello()
+
+let obj2 = Child(a: 100)
+
+
+
+
+
+
+/*
 //9 Chapter - Object Initializer
 class MyClass2{
     var value : Int
@@ -31,6 +77,7 @@ let obj = MyClass2()
 let obj2 = MyClass2(v1 : 10, v2 : "Hello")
 let obj3 = MyClass2(v1 : -10)
 obj3
+*/
 
 /*
 //8 Chapter - Class
