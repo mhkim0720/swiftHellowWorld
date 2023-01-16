@@ -3,6 +3,48 @@ import UIKit
 var greeting = "Hello, playground"
 greeting
 
+
+
+//6 Chapter
+// nil and Optional
+
+//nil, optional type
+let intVal3 : Int? = nil
+let intVal4 = Int("123")
+
+//using optional type
+
+//optional binding
+if let intVal5 = intVal3{
+    print(intVal5)
+}
+
+//optional chain
+var str5 : String? = "ABC"
+let ret1 = str5?.lowercased()
+print(ret1)
+
+//forced unwrapping
+let ret2 = str5!.lowercased()
+print(ret2)
+
+str5 = nil
+let ret3 = str5?.lowercased()
+print(ret3)
+
+//forced unwrapping -> error
+//let ret4 = str5!.lowercased()
+
+// IUO ! auto unwrapping
+var str3 : String! = "ABC"
+str3.append("!!!")
+str3 = nil
+//error
+//str3.append(contentsOf: "!!!")
+
+
+
+/*
 //5 Chapter
 for i in 0..<10 {
     print(i)
@@ -74,8 +116,9 @@ let intStr = "1234"
 let intValFromStr = Int(intStr)
 
 let num = Int("123a")
+ */
 
-///*
+/*
 let str : String = "Hello Swift"
 
 str.count
@@ -87,4 +130,4 @@ let index3 = str.index(str.startIndex,offsetBy: 3)
 let index7 = str.index(str.endIndex, offsetBy: -4)
 
 let subStr = str[index3...index7]
-//*/
+*/
