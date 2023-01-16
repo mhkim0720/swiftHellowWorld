@@ -3,6 +3,36 @@ import UIKit
 var greeting = "Hello, playground"
 greeting
 
+//9 Chapter - Object Initializer
+class MyClass2{
+    var value : Int
+    var value2 : String
+    
+    convenience init(){
+        self.init(v1: 0, v2 :"Hello")
+    }
+    
+    init(v1 : Int, v2 : String){
+        self.value = v1
+        self.value2 = v2
+    }
+    
+    //failable Initializer
+    init?(v1 : Int){
+        if v1 < 0 {
+            return nil
+        }
+        self.value = v1
+        self.value2 = "AA"
+    }
+}
+
+let obj = MyClass2()
+let obj2 = MyClass2(v1 : 10, v2 : "Hello")
+let obj3 = MyClass2(v1 : -10)
+obj3
+
+/*
 //8 Chapter - Class
 //class declaration
 //object
@@ -31,8 +61,7 @@ let str = obj.value2
 MyClass.say2()
 
 obj.say1()
-
-
+*/
 
 /*
 //7 Chapter - Function
