@@ -3,9 +3,33 @@ import UIKit
 var greeting = "Hello, playground"
 greeting
 
-
-
 //5 Chapter
+for i in 0..<10 {
+    print(i)
+}
+for item in [1,2,3,4]{
+    print (item)
+    
+    /*if item > 2 {
+        break
+    }*/
+    
+    guard item <= 2 else {
+        break
+    }
+}
+
+var i = 10
+if(i > 10){
+    print(i)
+}
+
+var someValue  = 3
+switch someValue {
+case 1 : print("1")
+case 2 : print("2")
+default : print("3")
+}
 
 
 //4 Chapter
