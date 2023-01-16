@@ -3,6 +3,32 @@ import UIKit
 var greeting = "Hello, playground"
 greeting
 
+//11 Chapter - Memory
+class MyClass3{
+    var y : YourClass!
+    deinit{
+        print("deinit")
+    }
+}
+class YourClass{
+    weak var m : MyClass3!
+    deinit {
+        print("deinit")
+    }
+}
+
+var obj : MyClass3! = MyClass3()
+var obj2 : YourClass! = YourClass()
+
+obj.y = obj2
+obj2.m = obj
+obj = nil
+obj2 = nil
+
+print("==END")
+
+
+/*
 //10 Chapter - Inheritance
 class Parent{
     var value : Int
@@ -42,11 +68,7 @@ obj.value
 obj.sayHello()
 
 let obj2 = Child(a: 100)
-
-
-
-
-
+ */
 
 /*
 //9 Chapter - Object Initializer
