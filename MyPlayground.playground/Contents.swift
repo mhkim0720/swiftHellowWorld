@@ -1,11 +1,7 @@
-//
-//  main.swift
-//  swiftHellowWorld
-//
-//  Created by IMStudio on 2023/01/16.
-//
+import UIKit
 
-import Foundation
+var greeting = "Hello, playground"
+greeting
 
 
 let str1 : String = "Swift"
@@ -35,6 +31,4 @@ let index3 = str.index(str.startIndex,offsetBy: 3)
 let index7 = str.index(str.endIndex, offsetBy: -4)
 
 let subStr = str[index3...index7]
-
-
-
+//*/
