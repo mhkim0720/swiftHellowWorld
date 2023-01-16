@@ -4,7 +4,45 @@ var greeting = "Hello, playground"
 greeting
 
 
+//7 Chapter - Function
+func func1()-> Bool{
+    print("7 Chapter Function")
+    return true
+}
 
+func1()
+
+//parameter, internal parameter name
+func sayHello(person : String){
+    print("Hello \(person)")
+}
+sayHello(person: "Friend")
+
+func sayHello2(who person : String){
+    print("Hello \(person)")
+}
+sayHello2(who: "Friend")
+
+func sayHello3(_ person : String){
+    print("Hello \(person)")
+}
+sayHello3("Friend")
+
+// optional
+func sayHello4(person : String?){
+    guard let str = person else {
+        print("Hello")
+        return
+    }
+    print("Hello \(str)")
+}
+sayHello4(person: nil)
+
+
+
+
+
+/*
 //6 Chapter
 // nil and Optional
 
@@ -41,7 +79,7 @@ str3.append("!!!")
 str3 = nil
 //error
 //str3.append(contentsOf: "!!!")
-
+*/
 
 
 /*
