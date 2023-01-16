@@ -3,7 +3,38 @@ import UIKit
 var greeting = "Hello, playground"
 greeting
 
+//8 Chapter - Class
+//class declaration
+//object
+//property
+//method
+//computed property
 
+class MyClass{
+    var value1 : Int = 0
+    var value2 : String?
+    var value3 : Int{
+        return 100;
+    }
+    
+    func say1(){
+        print("say1 func \(value1)")
+    }
+    static func say2(){
+        print("say2 static func ")
+    }
+}
+
+let obj = MyClass()
+obj.value1 = 10
+let str = obj.value2
+MyClass.say2()
+
+obj.say1()
+
+
+
+/*
 //7 Chapter - Function
 func func1()-> Bool{
     print("7 Chapter Function")
@@ -38,9 +69,7 @@ func sayHello4(person : String?){
 }
 sayHello4(person: nil)
 
-
-
-
+*/
 
 /*
 //6 Chapter
