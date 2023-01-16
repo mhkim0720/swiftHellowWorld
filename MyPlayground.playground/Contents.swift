@@ -4,6 +4,38 @@ var greeting = "Hello, playground"
 greeting
 
 
+
+//5 Chapter
+
+
+//4 Chapter
+//Tuple, Array, Dictionary, Set
+let intArray : [Int] = [1,2,3]
+let strArray : Array<String> = ["A", "B", "C"]
+
+intArray.count
+strArray.count
+
+intArray[1]
+strArray[2]
+
+var intArray2 = [1,2]
+intArray2.append(3)
+intArray2.insert(4,at: 1)
+
+intArray2.remove(at:1)
+intArray2
+
+var dic : [String:String] = ["1" : "jan", "2":"feb"]
+var dic1 : Dictionary<Int, String> = [1:"one", 2: "two"]
+
+dic["1"]
+dic1[2]
+dic["3"] = "Mar"
+
+//1~3 Chapter
+//Character, String
+
 let str1 : String = "Swift"
 let str2 = "1 + 2 = \(1+2)"
 
