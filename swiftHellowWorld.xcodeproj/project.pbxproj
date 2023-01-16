@@ -25,6 +25,7 @@
 /* Begin PBXFileReference section */
 		22786AFE2974E75B00CE76F3 /* swiftHellowWorld */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = swiftHellowWorld; sourceTree = BUILT_PRODUCTS_DIR; };
 		22786B012974E75B00CE76F3 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		22786B092974EE3B00CE76F3 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +42,7 @@
 		22786AF52974E75B00CE76F3 = {
 			isa = PBXGroup;
 			children = (
+				22786B092974EE3B00CE76F3 /* MyPlayground.playground */,
 				22786B002974E75B00CE76F3 /* swiftHellowWorld */,
 				22786AFF2974E75B00CE76F3 /* Products */,
 			);
