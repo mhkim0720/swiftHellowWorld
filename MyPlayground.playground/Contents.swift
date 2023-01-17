@@ -1,9 +1,49 @@
 import UIKit
+import Foundation
 
 var greeting = "Hello, playground"
 greeting
 
 
+//13 Chapter - Closure
+func testClosure(){
+    print("Closure")
+}
+
+var fn = testClosure
+fn()
+
+func test(msg : String){
+    
+}
+var fn2 = testClosure
+fn2
+
+var array = [1,4,2,5,3]
+array.sorted(by : {(a : Int, b: Int) -> Bool in
+    return a < b
+})
+
+let ret = array.sorted(by : {a,b in a < b})
+print(ret)
+
+//have to empty space
+array.sorted{ (a, b) -> Bool in
+    return a < b
+}
+
+//Tailing Closure API Declare
+func add(_ i : Int, _ j : Int, _ handler : (Int) -> Void) {
+    handler(i+j)
+}
+add(1,2) { (result) in
+    print("1 + 2 = \(result)")
+}
+
+
+
+
+/*
 //12 Chapter - Structure And Enum
 struct MyStruct{
     var value : Int
@@ -64,7 +104,7 @@ e1.rawValue
 let e3 = Day2(rawValue: 1)
 let e4 = Day2(rawValue: 2)
 e4
-
+*/
 
 /*
 //11 Chapter - Memory
