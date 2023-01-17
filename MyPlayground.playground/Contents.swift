@@ -3,6 +3,70 @@ import UIKit
 var greeting = "Hello, playground"
 greeting
 
+
+//12 Chapter - Structure And Enum
+struct MyStruct{
+    var value : Int
+    
+    //mutating
+    mutating func increase(){
+        print("increase")
+        value += 1
+    }
+}
+
+var obj2 = MyStruct(value: 100)
+obj2.increase()
+print(obj2)
+
+var v1 = MyStruct(value: 300)
+var v2 = v1
+v1.value = 200
+v2.value
+
+class MyClass{
+    var value = 0
+    
+    //error
+    //weak var prop : MyStruct!
+    
+}
+
+let c1 = MyClass()
+let c2 = c1
+c1.value = 100
+c2.value
+
+//enum
+enum Day : Int{
+    case am, pm
+}
+Day.am
+Day.pm
+let enum1 = Day.am
+enum1.rawValue
+let enum2 = Day(rawValue: 1)
+
+//enum2
+enum Day2 : Int{
+    case am,pm
+}
+let e1 = Day2.am
+let e2 = Day2.pm
+
+switch e2{
+case Day2.am : print("AM")
+case Day2.pm : print("PM")
+    
+}
+
+e1.rawValue
+let e3 = Day2(rawValue: 1)
+let e4 = Day2(rawValue: 2)
+e4
+
+
+/*
 //11 Chapter - Memory
 class MyClass3{
     var y : YourClass!
@@ -26,7 +90,7 @@ obj = nil
 obj2 = nil
 
 print("==END")
-
+*/
 
 /*
 //10 Chapter - Inheritance
