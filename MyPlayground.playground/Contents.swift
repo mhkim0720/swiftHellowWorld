@@ -4,6 +4,48 @@ import Foundation
 //var greeting = "Hello, playground"
 //greeting
 
+//19 Chapter - Foundation3, Timer, Notification, MultiThread
+
+class MyThread : Thread{
+    override func main() {
+        for i in 0...10 {
+            print("\(i)")
+            
+        }
+    }
+}
+class MyOperation : Operation {
+    override func main(){
+        for i in 0...10 {
+            print("\(i)")
+            Thread.sleep(forTimeInterval: 0.01)
+            
+        }
+    }
+}
+
+let queue = OperationQueue()
+queue.maxConcurrentOperationCount = 3
+
+let operation1 = MyOperation()
+let operation2 = MyOperation()
+let operation3 = MyOperation()
+let operation4 = MyOperation()
+let operation5 = MyOperation()
+
+queue.addOperation {    operation1 }
+queue.addOperation {    operation2 }
+queue.addOperation {    operation3 }
+queue.addOperation {    operation4 }
+queue.addOperation {    operation5 }
+
+queue.waitUntilAllOperationsAreFinished()
+
+
+
+
+
+/*
 //18 Chapter - Foundation2, File, Searialize, Custom Type Searialize
 
 //File
@@ -54,8 +96,7 @@ NSKeyedArchiver.archiveRootObject(person1, toFile: filePath2)
 
 let person2 = NSKeyedUnarchiver.unarchiveObject(withFile: filePath2) as! Person
 print(person2.name + ",\(person2.birthYear)")
-
-
+*/
 
 /*
 //17 Chapter - Foundation1, Selector, protocol, date
