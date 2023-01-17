@@ -4,7 +4,47 @@ import Foundation
 var greeting = "Hello, playground"
 greeting
 
+//14 Chapter - Protocol (Class Interface Only)
+//protocol
+//class, struct
+//protocol error
+//protocol extension
 
+protocol Singing{
+    func sing()
+}
+
+class Bird : Singing{
+    func sing(){
+        print("Bird Sing")
+    }
+}
+
+struct Cat : Singing{
+    func sing(){
+        print("Cat sing")
+    }
+}
+
+extension Singing{
+    func fly(){
+        print("fly")
+    }
+}
+
+let sparror = Bird()
+sparror.sing()
+
+let cat = Cat()
+cat.fly()
+
+
+
+
+
+
+
+/*
 //13 Chapter - Closure
 func testClosure(){
     print("Closure")
@@ -39,9 +79,7 @@ func add(_ i : Int, _ j : Int, _ handler : (Int) -> Void) {
 add(1,2) { (result) in
     print("1 + 2 = \(result)")
 }
-
-
-
+*/
 
 /*
 //12 Chapter - Structure And Enum
