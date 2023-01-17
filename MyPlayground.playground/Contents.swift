@@ -4,7 +4,61 @@ import Foundation
 //var greeting = "Hello, playground"
 //greeting
 
-//17 Chapter - Foundation1, Selector, protocol, date 
+//18 Chapter - Foundation2, File, Searialize, Custom Type Searialize
+
+//File
+let dirPath = "/Users/digisonic/desktop/mhkim/study"
+let srcFilePath = "/Users/digisonic/desktop/mhkim/study/string.txt"
+let destFilePath = "/Users/digisonic/desktop/mhkim/study/swift/string.txt"
+
+let fm = FileManager.default
+
+let files = try? fm.contentsOfDirectory(atPath: dirPath)
+print("files : \(files)")
+
+if !fm.fileExists(atPath: destFilePath){
+    do{
+        try fm.copyItem(atPath: srcFilePath, toPath: destFilePath)
+        print("ok")
+    }
+    catch let error{
+        print("error : \(error.localizedDescription)")
+    }
+}
+
+//Searialization
+let filePath2 = "/Users/digisonic/desktop/mhkim/study/data.dat"
+
+class Person : NSObject, NSCoding{
+    var name : String
+    var birthYear : Int
+    
+    init(name : String, birthYear : Int){
+        self.name = name
+        self.birthYear = birthYear
+    }
+    
+    func encode(with aCoder: NSCoder){
+        aCoder.encode(name,forKey: "NAME")
+        aCoder.encode(birthYear, forKey: "YEAR")
+    }
+    
+    required init?(coder aDecoder: NSCoder){
+        name = aDecoder.decodeObject(forKey: "NAME") as! String
+        birthYear = aDecoder.decodeInteger(forKey: "YEAR")
+    }
+}
+
+let person1 = Person(name: "aaa", birthYear: 1443)
+NSKeyedArchiver.archiveRootObject(person1, toFile: filePath2)
+
+let person2 = NSKeyedUnarchiver.unarchiveObject(withFile: filePath2) as! Person
+print(person2.name + ",\(person2.birthYear)")
+
+
+
+/*
+//17 Chapter - Foundation1, Selector, protocol, date
 
 //selector
 class TestClass : NSObject {
@@ -51,8 +105,7 @@ print(tm2)
 let calendar = Calendar.current
 let week = calendar.component(Calendar.Component.weekOfYear, from:now)
 print(week)
-
-
+*/
 
 /*
 //16 Chapter - Any, Type Check(is,as), Generics
