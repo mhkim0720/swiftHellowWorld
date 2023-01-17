@@ -4,6 +4,34 @@ import Foundation
 var greeting = "Hello, playground"
 greeting
 
+
+//16 Chapter - Any, Type Check(is,as), Generics
+var anyVal : Any = 3
+anyVal = "a"
+
+if anyVal is String {
+    print("String")
+}
+
+class Animal {}
+class Dog : Animal {}
+class Cat : Animal {}
+
+let obj = Cat()
+
+let obj1 = obj as Animal
+if let obj2 = obj1 as? Cat{
+    print("obj2 is Cat : \(obj2)")
+}
+
+//error
+//let obj3 = obj1 as! Dog
+
+
+
+
+
+/*
 //15 Chapter - Error do-catch
 let str = "aaa"
 let filepath = "filepath"
@@ -45,7 +73,7 @@ try? inputPositive(num: -10)
 
 //error
 //try! inputPositive(num: -10)
-
+ */
 
 /*
 //14 Chapter - Protocol (Class Interface Only)
