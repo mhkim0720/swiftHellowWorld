@@ -1,10 +1,60 @@
 import UIKit
 import Foundation
 
-var greeting = "Hello, playground"
-greeting
+//var greeting = "Hello, playground"
+//greeting
+
+//17 Chapter - Foundation1, Selector, protocol, date 
+
+//selector
+class TestClass : NSObject {
+    func greeting(){
+        print("Hello")
+    }
+
+    func sayHello(_ who : String){
+        print("Hello \(who)")
+    }
+    
+    func justDoIt(){
+        //selector error
+        //let sel = #selector(sayHello(_:))
+        //self.perform(sel, with: "Swift")
+    }
+    
+}
+
+let obj = TestClass()
+obj.justDoIt()
+//selector error
+//let sel1 = #selector( TestClass.greeting() )
+//let obj = TestClass()
+//obj.perform(sel1)
+
+//protocol
+
+//date, dateFormatter, calendar
+let now = Date()
+let yesterday = Date(timeIntervalSinceNow: (-60*60*24))
+
+let formatter = DateFormatter()
+formatter.timeStyle = .medium
+
+let tm = formatter.string(from: now)
+print(tm)
+
+formatter.dateFormat = "yyyy/MM"
+
+let tm2 = formatter.string(from: now)
+print(tm2)
+
+let calendar = Calendar.current
+let week = calendar.component(Calendar.Component.weekOfYear, from:now)
+print(week)
 
 
+
+/*
 //16 Chapter - Any, Type Check(is,as), Generics
 var anyVal : Any = 3
 anyVal = "a"
@@ -26,9 +76,7 @@ if let obj2 = obj1 as? Cat{
 
 //error
 //let obj3 = obj1 as! Dog
-
-
-
+*/
 
 
 /*
