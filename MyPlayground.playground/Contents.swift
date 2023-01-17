@@ -4,6 +4,50 @@ import Foundation
 var greeting = "Hello, playground"
 greeting
 
+//15 Chapter - Error do-catch
+let str = "aaa"
+let filepath = "filepath"
+
+do{
+    try str.write(toFile: filepath, atomically: true,  encoding: .utf8)
+}
+catch let error{
+    print("Error : \(error.localizedDescription)")
+}
+
+enum CustomError : Error{
+    case myFault, yourFault
+}
+do{
+    throw CustomError.myFault
+}
+catch CustomError.myFault{
+    print("myFault")
+}
+catch CustomError.yourFault{
+    print("your Fault")
+}
+
+func inputPositive(num : Int) throws {
+    guard num > 0 else{
+        throw CustomError.yourFault
+    }
+}
+
+do{
+    try inputPositive(num: -10)
+}
+catch let error{
+    
+}
+
+try? inputPositive(num: -10)
+
+//error
+//try! inputPositive(num: -10)
+
+
+/*
 //14 Chapter - Protocol (Class Interface Only)
 //protocol
 //class, struct
@@ -38,11 +82,7 @@ sparror.sing()
 let cat = Cat()
 cat.fly()
 
-
-
-
-
-
+*/
 
 /*
 //13 Chapter - Closure
