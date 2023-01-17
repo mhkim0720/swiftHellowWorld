@@ -4,6 +4,35 @@ import Foundation
 //var greeting = "Hello, playground"
 //greeting
 
+//20 Chapter - Network, Resources, Json
+
+//Resource
+let imageUrl = "http://www.ibiblio.org/wm/paint/auth/munch/munch.scream.jpg"
+
+if let url = URL(string: imageUrl),
+let data = try? Data(contentsOf: url){
+    let image = UIImage(data: data)
+}
+
+//Json
+let filePath = "/Users/digisonic/Desktop/mhkim/study/test.json"
+
+let url = URL(fileURLWithPath: filePath)
+let data = try! Data(contentsOf: url)
+let result = try! JSONSerialization.jsonObject(with: data, options: [])
+
+print(result)
+
+if let root = result as? [String : Any],
+    let devices = root["device"] as? [Any],
+    let iPhone7 = devices[0] as? [String : Any],
+    let spec = iPhone7["spec"] as? [String : Any]
+{
+    let cpu = spec["cpu"] as! String
+    print("iPhone7 cpu : \(cpu)")
+}
+
+/*
 //19 Chapter - Foundation3, Timer, Notification, MultiThread
 
 class MyThread : Thread{
@@ -40,9 +69,7 @@ queue.addOperation {    operation4 }
 queue.addOperation {    operation5 }
 
 queue.waitUntilAllOperationsAreFinished()
-
-
-
+*/
 
 
 /*
